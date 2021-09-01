@@ -1,0 +1,8 @@
+.git
+.gitignore
+.dockerignore
+README.md
+Dockerfile
+.env
+.DS_Store
+/var/cache

@@ -1,0 +1,31 @@
+console:
+    list:
+        symfonyVersionVerbosityLevel: 2
+        usageVerbosityLevel: 0
+        optionsVerbosityLevel: 2
+        availableCommandsVerbosityLevel: 0
+    excluded:
+        - 'about'
+        #- 'list'
+        - 'assets:install'
+        #- 'cache:clear'
+        - 'cache:pool:clear'
+        - 'cache:pool:delete'
+        - 'cache:pool:list'
+        - 'cache:pool:prune'
+        #- 'cache:warmup'
+        - 'debug:autowiring'
+        - 'debug:config'
+        - 'debug:container'
+        - 'debug:event-dispatcher'
+        - 'debug:router'
+        - 'config:dump-reference'
+        - 'lint:container'
+        - 'lint:yaml'
+        - 'router:match'
+        - 'secrets:decrypt-to-local'
+        - 'secrets:encrypt-from-local'
+        - 'secrets:generate-keys'
+        - 'secrets:list'
+        - 'secrets:remove'
+        - 'secrets:set'

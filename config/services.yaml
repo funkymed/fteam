@@ -1,0 +1,38 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    gitlab_token: '%env(GITLAB_TOKEN)%'
+    gitlab_id: '%env(GITLAB_ID)%'
+    gitlab_path: '%env(GITLAB_PATH)%'
+    gitlab_url: '%env(GITLAB_URL)%'
+    gitlab_debug: '%env(GITLAB_DEBUG)%'
+    gitlab_labels: '%env(GITLAB_LABELS)%'
+    gitlab_workflow_backlog: '%env(GITLAB_WORKFLOW_BACKLOG)%'
+    gitlab_workflow_wip: '%env(GITLAB_WORKFLOW_WIP)%'
+    gitlab_workflow_blocked: '%env(GITLAB_WORKFLOW_BLOCKED)%'
+    gitlab_workflow_rejected: '%env(GITLAB_WORKFLOW_REJECTED)%'
+    gitlab_workflow_accepted: '%env(GITLAB_WORKFLOW_ACCEPTED)%'
+    gitlab_workflow_finished: '%env(GITLAB_WORKFLOW_FINISHED)%'
+    
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\:
+        resource: '../src'
+        exclude:
+            - 'src/DependencyInjection/'
+            - 'src/Entity/'
+            - 'src/Kernel.php'
+            - 'src/Tests/'
+
+    # add more service definitions when explicit configuration is needed
+    # please note that last definitions always *replace* previous ones

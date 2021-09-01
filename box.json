@@ -1,0 +1,14 @@
+{
+    "main": "bin/app",
+    "directories": ["config", "src", "vendor", "var"],
+    "finder": [
+        {
+            "name": "*.php",
+            "exclude": ["Tests", "tests"],
+            "in": "vendor"
+        }
+    ],
+    "files": [".env.dist"],
+    "compression": "BZ2",
+    "output": "build/fteam.phar"
+}
