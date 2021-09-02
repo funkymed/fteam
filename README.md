@@ -166,7 +166,7 @@ https://github.com/box-project/box/blob/master/doc/installation.md#installation
 ### Compile
 
 ```
-make box
+make phar
 ```
 
 The builded file will be available here `build/fteam.phar`

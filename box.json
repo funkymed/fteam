@@ -1,6 +1,6 @@
 {
     "main": "bin/app",
-    "directories": ["config", "src", "vendor", "var"],
+    "directories": ["config", "src", "vendor"],
     "finder": [
         {
             "name": "*.php",

@@ -10,5 +10,5 @@
 /vendor/
 ###< symfony/framework-bundle ###
 .php-cs-fixer.cache
-/build
+/build/*
 !/build/.gitkeep
