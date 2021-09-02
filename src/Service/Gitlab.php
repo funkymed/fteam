@@ -234,4 +234,25 @@ class Gitlab
     public function getMilestone($name)
     {
     }
+
+    public function getWeight($issue)
+    {
+        if (isset($issue->weight) && $issue->weight) {
+            return $issue->weight ? $issue->weight : 0;
+        }
+
+        $regs=[
+        '/Weight:([0-9]+)/',
+        '/Weight: ([0-9]+)/',
+        '/Weight :([0-9]+)/',
+        '/Weight : ([0-9]+)/'
+        ];
+        foreach ($regs as $reg) {
+            $matches = array();
+            preg_match($reg, $issue->description, $matches);
+            if (count($matches)>0) {
+                return isset($matches[1]) ? $matches[1] : 0;
+            }
+        }
+    }
 }

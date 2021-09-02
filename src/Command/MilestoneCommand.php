@@ -221,13 +221,15 @@ class MilestoneCommand extends Command
         }
 
         foreach ($issues as $issue) {
+            $weight =$this->gitlab->getWeight($issue);
+
             $assignee = $this->gitlab->getAssigned($issue);
 
-            if (!$issue->weight || !$assignee) {
+            if (!$weight || !$assignee) {
                 continue;
             }
 
-            $total['nb_issues'][]=$issue->weight;
+            $total['nb_issues'][]=$weight;
 
             if ($issue->epic) {
                 $epics[$issue->epic->iid]=$issue->epic;
@@ -274,7 +276,6 @@ class MilestoneCommand extends Command
                 }
             }
 
-            $weight = $issue->weight ? $issue->weight : 0;
             $total['total_weights'][] = $weight;
             $total['stats'][$assignee->username]['issues'][]=$weight;
 

@@ -102,7 +102,7 @@ class CelerityCommand extends Command
                     ];
                 }
 
-                $weight = $issue->weight ? $issue->weight : 0;
+                $weight = $this->gitlab->getWeight($issue);
                 $closed = $issue->state === Gitlab::STATUS_CLOSED ? 1 : 0;
                 if ($closed) {
                     $assignees[$assignee->username]['milestones'][$milestone]['weights']+= $weight;

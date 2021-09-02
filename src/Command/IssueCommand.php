@@ -143,7 +143,9 @@ class IssueCommand extends Command
                 $state = sprintf('<fg=%s>%s</>', $color, $stateText);
             }
 
-            $totalWeight+=$issue->weight;
+            $weight =$this->gitlab->getWeight($issue);
+
+            $totalWeight+=$weight;
             $actionAdd = false;
 
             if ($optionNotAssigned || $optionAssigned || $optionWithWeight || $optionWithoutWeight) {
@@ -152,9 +154,9 @@ class IssueCommand extends Command
                 } elseif ($optionAssigned && $assignee) {
                     $actionAdd = true;
                 }
-                if ($optionWithoutWeight && !$issue->weight) {
+                if ($optionWithoutWeight && !$weight) {
                     $actionAdd = true;
-                } elseif ($optionWithWeight && $issue->weight) {
+                } elseif ($optionWithWeight && $weight) {
                     $actionAdd = true;
                 }
             } else {
@@ -176,14 +178,14 @@ class IssueCommand extends Command
                 $title = $issue->title;
                 $title = mb_strimwidth($title, 0, 80, "...");
 
-                if (!$assignee || !$issue->weight) {
+                if (!$assignee || !$weight) {
                     $title = sprintf('<bg=red>%s</>', $issue->title);
                 }
 
                 $tableIssues[]=[
                     $title,
                     $state ? $state : '',
-                    $issue->weight ? $issue->weight : '<fg=red>?</>',
+                    $weight ? $weight : '<fg=red>?</>',
                     $assignee ? $assignee->name : '<fg=red>?</>',
                     $issue->web_url,
                 ];
