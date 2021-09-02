@@ -8,8 +8,8 @@ You will have to add a milestone on every issues.
 
 #### Weight
 
-If you have a Gitlab Premium you can use the weight.
-If you don't, just add in your issue description at the end `Weight : x` replace x by the weight you want, the appp will do the rest.
+**If you have a Gitlab Premium** : you can use the weight.    
+**If you don't** :  just add in your issue description at the end `Weight : x` replace x by the weight you want, the appp will do the rest.
 You're welcome ;)
 
 ## Installation
