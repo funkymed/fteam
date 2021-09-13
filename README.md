@@ -26,6 +26,11 @@ Copy the file .env.dist to .env
 Edit the credential and configuration for your gitlab 
 
 ```bash
+###> symfony/framework-bundle ###
+APP_ENV=prod
+APP_SECRET=63e1e6d0bfd4e3b5527d243a81e0fb4c
+###< symfony/framework-bundle ###
+
 ###> gitlab ###
 GITLAB_TOKEN=xxx
 GITLAB_ID=123
@@ -132,6 +137,11 @@ $ ./bin/console celerity:issue --milestone="sprint-2021-W21-23" --without-weight
 create a .env file 
 
 ```bash
+###> symfony/framework-bundle ###
+APP_ENV=prod
+APP_SECRET=123123123123123123123
+###< symfony/framework-bundle ###
+
 ###> gitlab ###
 GITLAB_TOKEN=xxx
 GITLAB_ID=123
