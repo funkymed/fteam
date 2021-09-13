@@ -28,7 +28,7 @@ Edit the credential and configuration for your gitlab
 ```bash
 ###> symfony/framework-bundle ###
 APP_ENV=prod
-APP_SECRET=63e1e6d0bfd4e3b5527d243a81e0fb4c
+APP_SECRET=123123123123123123123
 ###< symfony/framework-bundle ###
 
 ###> gitlab ###
